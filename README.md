@@ -1,7 +1,26 @@
 
+# インストール（MacOs）
+
+## npm
+## node
+## truffle
+## granche
+## vscode
+
+# インストール（Windows）
+
+## npm
+## node
+## truffle
+## granche
+## vscode
+
+# インストール（Docker）
 
 
-# local machine truffle & Ganashe
+# ローカル環境での開発
+
+local machine truffle & Ganashe
 
 ## Ganacheの起動
 
@@ -48,7 +67,7 @@ $ truffle console
 
 ## command : SampleCode.sol
 
-サンプルコードの制御
+「サンプルコード」インスタンスの制御
 
 ```shell
 $ let sample = await SampleCode.deployed()
@@ -80,4 +99,57 @@ BN {
   length: 1,
   red: null
 }
+```
+
+
+## command : 1_Storage.sol
+
+「ストレージ」インスタンスの制御
+
+```shell
+$ let storage = await Storage.deployed()
+$ storage.store(300)
+$ storage.retrieve()
+```
+
+## command : 2_Owner.sol
+
+「オーナー」インスタンスの制御
+
+```shell
+$ web3.eth.getAccounts()
+[
+  '0x8589b5Cfaf36261b828833BA65900363A1e33C7e',
+  '0x23691C6F51AF7904E11117942787f2D7C540Ba2b',
+  　　　　　　　　:
+  '0x883b2726dA18226f428cE097Ea0327e4b5947E4A'
+]
+
+$ web3.eth.defaultAccount= '0x8589b5Cfaf36261b828833BA65900363A1e33C7e'
+$ let owner = await Owner.deployed()
+$ owner.getOwner()
+$ owner.changeOwner('0x23691C6F51AF7904E11117942787f2D7C540Ba2b')
+```
+
+## command : 3_Ballot.sol
+
+「投票」インスタンスの制御
+
+```shell
+$ web3.eth.getAccounts()
+[
+  '0x8589b5Cfaf36261b828833BA65900363A1e33C7e',
+  '0x23691C6F51AF7904E11117942787f2D7C540Ba2b',
+  　　　　　　　　:
+  '0x883b2726dA18226f428cE097Ea0327e4b5947E4A'
+]
+
+$ web3.eth.defaultAccount= '0x8589b5Cfaf36261b828833BA65900363A1e33C7e'
+$ let ballot = await Ballot.deployed()
+$ ballot.proposals.length
+$ ballot.giveRightToVote
+$ ballot.vote
+$ ballot.winningProposal
+$ ballot.winnerName
+$ ballot.delegate
 ```
