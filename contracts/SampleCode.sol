@@ -5,10 +5,6 @@ contract SampleCode {
 
     uint v;
 
-    constructor() public {
-        v = 0;
-    }
-
     function set(uint v_) public {
         v = v_;
     }
