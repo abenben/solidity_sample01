@@ -3,13 +3,26 @@
 
 # local machine truffle & Ganashe
 
-## compile
+## Ganacheの起動
+
+```shell
+$ open /Applications/Ganache.app
+$ # 対象のワークスペースを選択
+```
+
+## コンパイル
 
 ```shell
 $ truffle compile
 ```
 
-## migrate
+## デプロイ
+
+```shell
+$ truffle deploy
+```
+
+## マイグレーション
 
 ```shell
 $ truffle migrate
@@ -30,7 +43,7 @@ $ truffle console
 > # 秘密鍵と公開鍵のペアを作成(ノードに保存はされない)
 > web3.eth.accounts.create()
 > # 終了コマンド
-> .exit()
+> .exit
 ```
 
 ## command : SampleCode.sol
